@@ -18,3 +18,7 @@
   /* Cor de destaque */
   --color-strong-yellow: #FFBB24;
 }
+
+button {
+  cursor: pointer;
+}

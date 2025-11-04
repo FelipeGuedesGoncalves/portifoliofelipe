@@ -1,6 +1,6 @@
 "use client"
 
-import DownloadIcon from "@/assets/DownloadIcon.svg"
+import { Download } from "lucide-react";
 
 export interface ButtonSpecs{
     name: string
@@ -18,9 +18,9 @@ export function NavButton({name, level}: ButtonSpecs){
 
 export function DownloadBtn(){
     return(
-        <button>
-            Download
-            <DownloadIcon />
+        <button className="text-xl flex text-black bg-white mr-10 p-2 px-4 mt-2">
+            Download CV
+            <Download className="ml-5"/>
         </button>
     )
 }
