@@ -1,6 +1,6 @@
 "use client"
 
-import { Download } from "lucide-react";
+import DownloadIcon from '@mui/icons-material/Download';
 
 export interface ButtonSpecs{
     name: string
@@ -20,7 +20,8 @@ export function DownloadBtn(){
     return(
         <button className="text-xl flex text-black bg-white mr-10 p-2 px-4 mt-2    hover:bg-transparent hover:text-white  transition ease-in-out duration-200">
             Download CV
-            <Download className="ml-5"/>
+            <DownloadIcon className="ml-5 mt-[2]"/>
+            
         </button>
     )
 }

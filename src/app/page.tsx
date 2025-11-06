@@ -21,7 +21,7 @@ export default function Home() {
           <NavButton name="MUDAR" level={500} />
           <section className="flex justify-between items-center ">
             <NavButton name="Sobre" level={500} />
-            <NavButton name="Portifólio" level={500} />
+            <NavButton name="Portifólio" level={1300} />
             <NavButton name="Contatos" level={500} />
             <DownloadBtn />
           </section>
@@ -69,6 +69,43 @@ export default function Home() {
         </div>
       </section>
       
+      <section className="w-full h-170 bg-neutral-900 p-20 flex flex-col items-center justify-center">
+        <h2 className={`${S4.className} text-white text-xl w-280`}>Sobre Mim</h2>
+        <div className="mt-10 flex flex-row justify-between text-justify w-280">
+
+          <p className={`${STMono.className} text-white w-[60%]`}>Olá, meu nome é Felipe, e sou apaixonado por design e pela criação de experiências únicas. Desde que ingressei no mundo da tecnologia, fico cada vez mais fascinado com o impacto positivo que podemos gerar por meio de soluções inovadoras. Acredito que a tecnologia deve sempre estar a serviço da melhoria contínua da humanidade.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur laboriosam, ex odit cumque rem nobis maiores, iste nemo sapiente quasi dolores animi repellendus! Cumque possimus aperiam blanditiis quasi facere veniam.</p>
+        </div>
+      </section>
+
+            <section className="w-full h-170 bg-neutral-800 p-20 flex flex-col items-center justify-center">
+        <h2 className={`${S4.className} text-white text-xl w-280`}>Contatos</h2>
+        <div className="mt-10 flex flex-row justify-between text-justify w-280">
+
+          <p className={`${STMono.className} text-white w-[60%]`}>Olá, meu nome é Felipe, e sou apaixonado por design e pela criação de experiências únicas. Desde que ingressei no mundo da tecnologia, fico cada vez mais fascinado com o impacto positivo que podemos gerar por meio de soluções inovadoras. Acredito que a tecnologia deve sempre estar a serviço da melhoria contínua da humanidade.
+            <br />
+            <br />
+            Durante minha trajetória na Faculdade de Informática e Administração Paulista (FIAP), tive a oportunidade de adquirir uma ampla gama de conhecimentos, como Programação Orientada a Objetos (POB), DevOps, responsividade, garantia de qualidade, trabalho em equipe e gestão de prazos.
+            <br />
+            <br />
+            No entanto, o que realmente despertou minha paixão foi o desenvolvimento front-end, tanto para web quanto para mobile. Se você está buscando alguém com experiência e interesse em Next.js, React, HTML, CSS, JavaScript, TypeScript, React Native e Kotlin, não hesite em acessar a seção de contato abaixo.
+          </p>
+
+          <div className="w-[35%] h-full">
+            <div>
+              <h4 className={`${S4.className} text-white text-sm w-full`}>Minha Formação Acadêmica</h4>
+              <p className={`${STMono.className} text-yellow-400 mt-5`}>Tecnólogo em Análise e desenvolvimento de sistemas</p>
+              <p className={`${STMono.className} text-white mt-3`}>FIAP - São Paulo - SP, Brasil | fev 2023 - nov 2024</p>
+            </div>
+            <div>
+              <h4 className={`${S4.className} mt-10 text-white text-sm w-full`}>Línguas faladas</h4>
+              <p className={`${STMono.className} text-white mt-5`}><span className="text-yellow-400">Português:</span> Língua Nativa</p>
+              <p className={`${STMono.className} text-white mt-3`}><span className="text-yellow-400">Inglês:</span> Fluente (nível C1) - Alta proficiência em leitura e escuta, aprimorando fala e escrita</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
