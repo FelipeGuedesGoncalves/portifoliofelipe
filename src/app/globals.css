@@ -2,21 +2,6 @@
 
 
 @theme inline {
-  /* Tons claros de roxo-azulado */
-  --color-light-blue: #E7EBF8;
-  --color-blue: #D3D9F2;
-  --color-lilac: #B7C0EA;
-  --color-medium-purple: #9AA0DF;
-  --color-purple: #8184D3;
-  --color-deep-purple: #6C67C4;
-
-  /* Tons escuros */
-  --color-dark-purple: #27224D;
-  --color-dark-blue: #1A1731;
-  --color-black-purple: #0E0D15;
-
-  /* Cor de destaque */
-  --color-strong-yellow: #FFBB24;
 }
 
 button {
