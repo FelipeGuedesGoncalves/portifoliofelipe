@@ -18,10 +18,13 @@ export function NavButton({name, level}: ButtonSpecs){
 
 export function DownloadBtn(){
     return(
-        <button className="text-xl flex text-black bg-white mr-10 p-2 px-4 mt-2    hover:bg-transparent hover:text-white  transition ease-in-out duration-200">
+        <a 
+        href="/CVFelipeGuedesGoncalves.pdf"
+        download={"CVFelipeGuedesGoncalves.pdf"} 
+        className="text-xl flex text-black bg-white mr-10 p-2 px-4 mt-2    hover:bg-transparent hover:text-white  transition ease-in-out duration-200">
             Download CV
             <DownloadIcon className="ml-5 mt-[2]"/>
             
-        </button>
+        </a>
     )
 }
