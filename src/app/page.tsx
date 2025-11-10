@@ -15,21 +15,21 @@ const S4 = Sixtyfour({
 export default function Home() {
   return (
     <main>
-      <header className="shadow-[inset_0px_-140px_180px_60px_rgb(224_224_224_/_0.15)] w-full h-165 bg-black flex flex-col items-center">
+      <header className="xl:bg-green-500 lg:bg-yellow-700 md:bg-orange-400 sm:bg-red-500 shadow-[inset_0px_-140px_180px_60px_rgb(224_224_224_/_0.15)] w-full bg-black flex flex-col items-center px-25 pb-30">
 
-        <nav className={`w-full h-20 flex justify-between items-center`}>
+        <nav className={`xl:w-280 w-full h-20 flex justify-between items-center`}>
           <NavButton name="MUDAR" level={500} />
-          <section className="flex justify-between items-center ">
+          <section className="flex justify-between items-center w-[70%]">
             <NavButton name="Sobre" level={500} />
             <NavButton name="Portifólio" level={1300} />
             <NavButton name="Contatos" level={1700} />
             <DownloadBtn />
           </section>
         </nav>
-        <div className=" w-250 flex items-center justify-evenly mt-25">
-          <Image className="mr-10" alt="" src={"/Felipe.png"} height={260} width={260}></Image>
-          <div className="h-40 flex flex-col justify-between ">
-            <h1 className={`${S4.className} text-2xl w-150`}>Prazer, me chamo Felipe Guedes Gonçalves</h1>
+        <div className=" lg:w-250 flex lg:flex-row flex-col-reverse items-center justify-evenly mt-25">
+          <Image className="mr-10 lg:ml-15 md:ml-[0%] ml-[60%]" alt="" src={"/Felipe.png"} height={260} width={260}></Image>
+          <div className="h-40 flex flex-col justify-between lg:mt-0 mt-20 w-full">
+            <h1 className={`${S4.className} text-2xl lg:w-150 w-full`}>Prazer, me chamo Felipe Guedes Gonçalves</h1>
             <p>E sou um desenvolvedor web e mobile</p>
             <div className="w-30 flex justify-between">
               <button> <Image alt="" src={"FigmaIcon.svg"} width={30} height={10} /> </button>
@@ -40,11 +40,11 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="w-full h-170 bg-neutral-800 p-20 flex flex-col items-center justify-center">
-        <h2 className={`${S4.className} text-xl w-280`}>Sobre Mim</h2>
-        <div className="mt-10 flex flex-row justify-between text-justify w-280">
+      <section className="w-full bg-neutral-800 p-25 flex flex-col items-center justify-center">
+        <h2 className={`${S4.className} text-xl xl:w-280 w-full`}>Sobre Mim</h2>
+        <div className="mt-10 flex lg:flex-row flex-col justify-between text-justify xl:w-280">
 
-          <p className={`w-[60%]`}>Olá, meu nome é Felipe, e sou apaixonado por design e pela criação de experiências únicas. Desde que ingressei no mundo da tecnologia, fico cada vez mais fascinado com o impacto positivo que podemos gerar por meio de soluções inovadoras. Acredito que a tecnologia deve sempre estar a serviço da melhoria contínua da humanidade.
+          <p className={`lg:w-[60%]`}>Olá, meu nome é Felipe, e sou apaixonado por design e pela criação de experiências únicas. Desde que ingressei no mundo da tecnologia, fico cada vez mais fascinado com o impacto positivo que podemos gerar por meio de soluções inovadoras. Acredito que a tecnologia deve sempre estar a serviço da melhoria contínua da humanidade.
             <br />
             <br />
             Durante minha trajetória na Faculdade de Informática e Administração Paulista (FIAP), tive a oportunidade de adquirir uma ampla gama de conhecimentos, como Programação Orientada a Objetos (POB), DevOps, responsividade, garantia de qualidade, trabalho em equipe e gestão de prazos.
@@ -53,9 +53,9 @@ export default function Home() {
             No entanto, o que realmente despertou minha paixão foi o desenvolvimento front-end, tanto para web quanto para mobile. Se você está buscando alguém com experiência e interesse em Next.js, React, HTML, CSS, JavaScript, TypeScript, React Native e Kotlin, não hesite em acessar a seção de contato abaixo.
           </p>
 
-          <div className="w-[35%] h-full">
+          <div className="lg:w-[35%] h-full">
             <div>
-              <h4 className={`${S4.className} text-sm w-full`}>Minha Formação Acadêmica</h4>
+              <h4 className={`${S4.className} text-sm w-full lg:m-0 mt-30`}>Minha Formação Acadêmica</h4>
               <p className={`text-yellow-400 mt-5 font-bold`}>Tecnólogo em Análise e desenvolvimento de sistemas</p>
               <p className={`mt-3`}>FIAP - São Paulo - SP, Brasil | fev 2023 - nov 2024</p>
             </div>
@@ -69,20 +69,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full h-170 bg-neutral-900 p-20 flex flex-col items-center justify-center">
-        <h2 className={`${S4.className} text-xl w-280`}>Sobre Mim</h2>
-        <div className="mt-10 flex flex-row justify-between text-justify w-280">
 
-          <p className={` w-[60%]`}>Olá, meu nome é Felipe, e sou apaixonado por design e pela criação de experiências únicas. Desde que ingressei no mundo da tecnologia, fico cada vez mais fascinado com o impacto positivo que podemos gerar por meio de soluções inovadoras. Acredito que a tecnologia deve sempre estar a serviço da melhoria contínua da humanidade.
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur laboriosam, ex odit cumque rem nobis maiores, iste nemo sapiente quasi dolores animi repellendus! Cumque possimus aperiam blanditiis quasi facere veniam.</p>
-        </div>
-      </section>
-
-      <section className="w-full h-130 bg-neutral-800 p-20 flex flex-col items-center justify-center">
-        <h2 className={`${S4.className} text-xl w-280`}>Contatos</h2>
-        <div className="mt-10 flex flex-col justify-between text-justify w-280">
-          <p className=""><span className="text-yellow-400 font-bold">Email:</span> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=felipegoncalvesctt@gmail.com&su=Contato%20via%20Portifólio">felipegoncalvesctt@gmail.com</a></p>
-          <p className="mt-4"><span className="text-yellow-400 font-bold">LinkedIn:</span> <a href="https://www.linkedin.com/in/felipeguedesgoncalves/">https://www.linkedin.com/in/felipeguedesgoncalves/</a></p>
+      <section className="w-full h-130 bg-neutral-800 p-25 flex flex-col items-center justify-center">
+        <div className="xl:w-280 w-full">
+          <h2 className={`${S4.className} text-xl xl:w-280`}>Contatos</h2>
+          <div className="mt-10 flex flex-col justify-between text-justify xl:w-280">
+            <p className=""><span className="text-yellow-400 font-bold">Email:</span> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=felipegoncalvesctt@gmail.com&su=Contato%20via%20Portifólio">felipegoncalvesctt@gmail.com</a></p>
+            <p className="mt-4"><span className="text-yellow-400 font-bold">LinkedIn:</span> <a href="https://www.linkedin.com/in/felipeguedesgoncalves/">https://www.linkedin.com/in/felipeguedesgoncalves/</a></p>
+          </div>
         </div>
       </section>
 
