@@ -15,18 +15,18 @@ const S4 = Sixtyfour({
 export default function Home() {
   return (
     <main>
-      <header className="xl:bg-green-500 lg:bg-yellow-700 md:bg-orange-400 sm:bg-red-500 shadow-[inset_0px_-140px_180px_60px_rgb(224_224_224_/_0.15)] w-full bg-black flex flex-col items-center md:px-25 md:pb-30 px-10 pb-8">
+      <header className="xl:bg-green-500 lg:bg-yellow-500 md:bg-orange-400 sm:bg-red-500 shadow-[inset_0px_-140px_180px_60px_rgb(224_224_224_/_0.15)] w-full bg-black flex flex-col items-center md:px-25 md:pb-30 pb-8 sm:px-17 px-10">
 
-        <nav className={`xl:w-280 w-full h-20 flex justify-between items-center`}>
-          <NavButton name="MUDAR" level={500} />
-          <section className="flex justify-between items-center w-[70%]">
-            <NavButton name="Sobre" level={500} />
-            <NavButton name="Portifólio" level={1300} />
-            <NavButton name="Contatos" level={1700} />
+        <nav className={`xl:w-280 w-full h-20 flex justify-between items-center lg:text-lg md:text-md`}>
+          <NavButton className="" name="MUDAR" level={500} />
+          <section className="flex justify-between items-center lg:w-[70%] md:w-[75%]">
+            <NavButton className=" md:block hidden" name="Sobre" level={500} />
+            <NavButton className=" md:block hidden" name="Portifólio" level={1300} />
+            <NavButton className=" md:block hidden" name="Contatos" level={1700} />
             <DownloadBtn />
           </section>
         </nav>
-        <div className=" lg:w-250 flex md:flex-row flex-col-reverse items-center justify-evenly mt-25">
+        <div className=" lg:w-250 flex md:flex-row flex-col-reverse items-center justify-evenly md:mt-25 mt-12">
           <Image className="flex-shrink-0 object-contain mr-10 lg:ml-15 md:ml-[0%] md:w-77 md:h-77 sm:w-60 sm:h-60 w-45 h-45 ml-[60%]" alt="" src={"/Felipe.png"} height={260} width={260}></Image>
           <div className="md:h-40 flex flex-col justify-between w-full lg:mb-10 md:mb-20">
             <h1 className={`${S4.className} md:text-2xl lg:w-150 w-full`}>Prazer, me chamo Felipe Guedes Gonçalves</h1>
@@ -70,22 +70,36 @@ export default function Home() {
       </section>
 
 
-      <section className="w-full h-130 bg-neutral-800 p-25 flex flex-col items-center justify-center">
-        <div className="xl:w-280 w-full">
-          <h2 className={`${S4.className} md:text-xl xl:w-280`}>Contatos</h2>
-          <div className="mt-10 flex flex-col justify-between text-justify xl:w-280">
-            <p className=""><span className="text-yellow-400 font-bold">Email:</span> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=felipegoncalvesctt@gmail.com&su=Contato%20via%20Portifólio">felipegoncalvesctt@gmail.com</a></p>
-            <p className="mt-4"><span className="text-yellow-400 font-bold">LinkedIn:</span> <a href="https://www.linkedin.com/in/felipeguedesgoncalves/">https://www.linkedin.com/in/felipeguedesgoncalves/</a></p>
-          </div>
-        </div>
-      </section>
+<section className="w-full bg-neutral-800 md:p-25 sm:p-17 sm:pt-23 p-10 flex flex-col items-center justify-center">
+  <div className="xl:w-280 w-full">
+    <h2 className={`${S4.className} md:text-xl xl:w-280 w-full`}>Contatos</h2>
+    <div className="md:text-base text-sm mt-10 flex flex-col justify-between text-justify xl:w-280">
+      <p className="">
+        <span className="text-yellow-400 font-bold">Email:</span>{' '}
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=felipegoncalvesctt@gmail.com&su=Contato%20via%20Portifólio">
+          felipegoncalvesctt@gmail.com
+        </a>
+      </p>
+      <p className="mt-4">
+        <span className="text-yellow-400 font-bold">LinkedIn:</span>{' '}
+        <a className="break-all" href="https://www.linkedin.com/in/felipeguedesgoncalves/">
+          https://www.linkedin.com/in/felipeguedesgoncalves/
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
 
-      <footer className="w-full bg-black p-20 flex flex-col items-center justify-center text-justify">
-        <p>Os trabalhos apresentados neste portfólio são resultado de um esforço colaborativo de uma equipe de alunos da Faculdade de Informática e Administração Paulista (FIAP). As empresas parceiras da instituição forneceram os cases e desafios para os projetos, mas não houve vínculo comercial direto com os alunos. A equipe, da qual fiz parte, foi responsável por todas as etapas do desenvolvimento dos projetos, desde a definição das funcionalidades e interfaces até a implementação final. Minha participação se restringiu à execução dos projetos propostos pela instituição, como parte integral do meu processo de aprendizado.
-          <br />
-          <br />
-          A utilização de qualquer material deste portfólio sem a minha autorização expressa é proibida. As imagens e outros materiais de terceiros utilizados neste portfólio foram obtidos com as devidas autorizações ou estão sob licenças de uso livre.</p>
-      </footer>
+
+<footer className="w-full bg-black md:p-25 sm:p-17 sm:pt-23 p-10 flex flex-col items-center justify-center text-justify">
+  <p className="md:text-base text-xs xl:w-280 w-full">
+   Os projetos deste portfólio foram desenvolvidos por uma equipe de alunos da FIAP, com base em cases e desafios fornecidos por empresas parceiras, sem qualquer vínculo comercial com os estudantes. A equipe foi responsável por todas as etapas do desenvolvimento — da definição de funcionalidades e interfaces até a implementação final. Minha participação se restringiu à execução dos projetos propostos pela instituição, como parte integral do meu processo de aprendizado.
+    <br />
+    <br />
+    O uso de qualquer material deste portfólio sem minha autorização é proibido. Imagens e outros conteúdos de terceiros foram utilizados apenas com as devidas permissões ou sob licenças livres.
+  </p>
+</footer>
+
     </main>
   );
 }
