@@ -1,4 +1,5 @@
 import { DownloadBtn, NavButton } from "@/components/buttons";
+import PortShow from "@/components/portifolioShowcase";
 import { Share_Tech_Mono, Sixtyfour } from "next/font/google"
 import Image from "next/image";
 
@@ -13,6 +14,7 @@ const S4 = Sixtyfour({
 })
 
 export default function Home() {
+
   return (
     <main className="flex flex-col items-center">
       <div className="fixed z-50 2xl:bg-blue-500 xl:bg-green-500 lg:bg-yellow-500 md:bg-orange-500 sm:bg-red-500 w-80 h-5 m-5 rounded-4xl"></div>
@@ -73,30 +75,7 @@ export default function Home() {
 
       <section className="w-full bg-neutral-900 md:p-15 sm:p-17 sm:pt-23 p-10 flex flex-col items-center justify-center">
         <h2 className={`${S4.className} md:text-xl xl:w-280 w-full `}>Meus Trabalhos</h2>
-        <div className="md:text-base text-sm mt-10 flex lg:flex-row flex-col justify-between items-center text-justify xl:w-280">
-
-
-          <div className="w-full flex flex-col items-center">
-
-            <div className="w-full flex justify-around mb-10">
-            </div>
-            <Image alt="" src={"/InsightWise.png"} width={800} height={100} />
-          </div>
-
-          <div className="lg:w-[39%] lg:ml-10 lg:mt-0 mt-15">
-            <p className="">
-              <span className="text-yellow-500 font-bold">InsightWise</span> é uma plataforma que desenvolvi em grupo com o intuito de ajudar empresas a aproveitarem ao máximo os sistemas ERP da Plusoft. Focada em análise de produtividade, a ferramenta monitora interações nos softwares corporativos, identifica pontos de melhoria e gera insights estratégicos para aumentar a eficiência das equipes.
-              <br />
-              <br />
-              Neste trabalho fiquei responsável pela confecção do port mobile da aplicação via React Native, algumas das tecnologias usadas foram o Firebase Realtime Database, Expo e API de reconhecimento de CNPJ, acesse a aplicação ou veja o figma acessando algum dos botões abaixo:
-            </p>
-            <div className="w-full flex lg:justify-between justify-around mt-7">
-              <button className="text-black bg-white lg:p-2 lg:px-4 font-semibold hover:bg-transparent hover:text-white transition ease-in-out duration-200 ">React Native App</button>
-              <button className="text-black bg-white lg:p-2 lg:px-4  hover:bg-transparent hover:text-white transition ease-in-out duration-200 ">Figma</button>
-            </div>
-
-          </div>
-        </div>
+        <PortShow />
       </section>
 
 
