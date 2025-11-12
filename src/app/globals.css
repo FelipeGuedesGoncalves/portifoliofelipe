@@ -13,3 +13,7 @@ a {
   cursor: pointer;
   border-radius: 5px;
 }
+
+:root {
+  color-scheme: dark;
+}
