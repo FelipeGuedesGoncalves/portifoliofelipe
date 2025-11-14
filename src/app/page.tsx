@@ -1,5 +1,9 @@
+"use client"
+
 import { DownloadBtn, NavButton } from "@/components/buttons";
 import PortShow from "@/components/portifolioShowcase";
+import dynamic from "next/dynamic";
+
 import { Share_Tech_Mono, Sixtyfour } from "next/font/google"
 import Image from "next/image";
 
@@ -74,8 +78,8 @@ export default function Home() {
 
 
       <section className="w-full bg-neutral-900 md:p-15 sm:p-17 sm:pt-23 p-10 flex flex-col items-center justify-center">
-        <h2 className={`${S4.className} md:text-xl xl:w-280 w-full `}>Meus Trabalhos</h2>
-        <PortShow />
+        <h2 className={`${S4.className} md:text-xl xl:w-280 w-full`}>Meus Trabalhos</h2>
+        <PortShow/>
       </section>
 
 
