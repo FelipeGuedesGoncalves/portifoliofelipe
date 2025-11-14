@@ -90,10 +90,10 @@ export default function PortShow() {
             <div className="lg:w-[39%] lg:ml-10 lg:mt-0 mt-15">
                 <p>{project.desc}</p>
                 <div className="w-full flex lg:justify-between justify-around mt-7">
-                    <a href={project.appLink} className="text-black bg-white lg:p-2 lg:px-4 font-semibold hover:bg-transparent hover:text-white transition ease-in-out duration-200">
+                    <a href={project.appLink} className="text-black bg-white xl:p-2 xl:px-4 p-1 px-3 font-semibold hover:bg-transparent hover:text-white transition ease-in-out duration-200">
                         React Native App
                     </a>
-                    <a href={project.figmaLink} className="text-black bg-white lg:p-2 lg:px-4 hover:bg-transparent hover:text-white transition ease-in-out duration-200">
+                    <a href={project.figmaLink} className="text-black bg-white xl:p-2 xl:px-4 p-1 px-3 hover:bg-transparent hover:text-white transition ease-in-out duration-200">
                         Figma
                     </a>
                 </div>
