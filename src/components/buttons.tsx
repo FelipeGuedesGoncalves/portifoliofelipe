@@ -2,20 +2,33 @@
 
 import DownloadIcon from '@mui/icons-material/Download';
 
-export interface ButtonSpecs{
-    name: string
-    level: number
-    className: string
+export interface ButtonSpecs {
+  name: string
+  targetId: string
+  offset: number
+  className: string
 }
 
-export function NavButton({name, level, className}: ButtonSpecs){
-    return(
-        <button className={"bg-transparent bg-none h-10 p-2 hover:underline " + className}
-        onClick={() => window.scrollTo({ top: level, behavior: "smooth" })}>
-            {name}
-        </button>
-    )
+export function NavButton({ name, targetId, className, offset }: ButtonSpecs) {
+  const handleClick = () => {
+    const element = document.getElementById(targetId);
+    if (element) {// pixels acima do elemento
+      const topPos = element.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: topPos, behavior: "smooth" });
+    }
+  };
+
+  return (
+    <button
+      className={"bg-transparent h-10 p-2 hover:underline " + className}
+      onClick={handleClick}
+    >
+      {name}
+    </button>
+  );
 }
+
+
 
 export function DownloadBtn(){
     return(

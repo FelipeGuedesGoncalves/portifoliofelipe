@@ -25,11 +25,11 @@ export default function Home() {
       <header className=" shadow-[inset_0px_-140px_180px_60px_rgb(224_224_224_/_0.15)] w-full bg-black flex flex-col items-center md:px-25 md:pb-30 pb-8 sm:px-17 px-10">
 
         <nav className={`xl:w-280 w-full h-20 flex justify-between items-center lg:text-lg md:text-md`}>
-          <NavButton className="" name="MUDAR" level={500} />
+          <NavButton className="" name="MUDAR" targetId="" offset={140} />
           <section className="flex justify-between items-center lg:w-[70%] md:w-[75%]">
-            <NavButton className=" md:block hidden" name="Sobre" level={500} />
-            <NavButton className=" md:block hidden" name="Portifólio" level={1300} />
-            <NavButton className=" md:block hidden" name="Contatos" level={1700} />
+            <NavButton className=" md:block hidden" name="Sobre" targetId="sobre" offset={140} />
+            <NavButton className=" md:block hidden" name="Portifólio" targetId="portShow" offset={50} />
+            <NavButton className=" md:block hidden" name="Contatos" targetId="contatos" offset={140} />
             <DownloadBtn />
           </section>
         </nav>
@@ -47,7 +47,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="w-full bg-neutral-800 md:p-25 sm:p-17 sm:pt-23 p-10 flex flex-col items-center justify-center">
+      <section id="sobre" className="w-full bg-neutral-800 md:p-25 sm:p-17 sm:pt-23 p-10 flex flex-col items-center justify-center">
         <h2 className={`${S4.className} md:text-xl xl:w-280 w-full`}>Sobre Mim</h2>
         <div className="md:text-base text-sm mt-10 flex lg:flex-row flex-col justify-between text-justify xl:w-280">
 
@@ -77,13 +77,13 @@ export default function Home() {
       </section>
 
 
-      <section className="w-full bg-neutral-900 md:p-15 sm:p-17 sm:pt-23 lg:p-10 flex flex-col items-center justify-center">
+      <section id="portShow" className="w-full bg-neutral-900 md:p-15 sm:p-17 sm:pt-23 lg:p-10 flex flex-col items-center justify-center">
         <h2 className={`${S4.className} md:text-xl xl:w-280 w-full lg:p-0 p-10`}>Meus Trabalhos</h2>
         <PortShow/>
       </section>
 
 
-      <section className="w-full bg-neutral-800 md:p-25 sm:p-17 sm:pt-23 p-10 flex flex-col items-center justify-center">
+      <section id="contatos" className="w-full bg-neutral-800 md:p-25 sm:p-17 sm:pt-23 p-10 flex flex-col items-center justify-center">
         <div className="xl:w-280 w-full">
           <h2 className={`${S4.className} md:text-xl xl:w-280 w-full`}>Contatos</h2>
           <div className="md:text-base text-sm mt-10 flex flex-col justify-between text-justify xl:w-280">
