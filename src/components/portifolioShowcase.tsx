@@ -17,7 +17,12 @@ export default function PortShow() {
             // Deselecionando
             setDisabled(true);
             setSumir(null); // remove hidden imediatamente para animar a volta
-            setTextStyle("lg:w-1/2 lg:h-0 lg:mt-0 ");
+
+            setTextStyle("lg:w-1/2 lg:h-170 h-200 lg:ml-10 lg:mt-0 lg:p-0 p-6");
+
+            setTimeout(()=> {
+            setTextStyle("lg:w-1/2 lg:mt-0 lg:p-0 px-6 h-0");
+            },200)
 
             setTimeout(() => {
                 setSelected(null);
@@ -25,21 +30,26 @@ export default function PortShow() {
                 setWrapperW(null);
                 setTextStyle("");
                 setSelectedText(null)
-            }, 650); // tempo da animação de volta
+            }, 850); // tempo da animação de volta
         } else {
             // Selecionando
             setSelected(idx);
             setDisabled(true);
-            setTextStyle("lg:w-1/2 lg:h-0  lg:mt-0 ");
 
             setTimeout(() => {
                 setSumir("hidden"); // esconde após a animação de saída
-                setWrapperW("lg:w-[50%]");
+                setWrapperW("lg:w-[50%] lg:p-0 p-6 ");
                 setDisabled(false);
+                setTextStyle("lg:w-1/2 h-0 lg:mt-0 lg:p-0 p-6");
             }, 600); // tempo da animação de saída
 
             setTimeout(()=> {
-                setTextStyle("lg:w-1/2 lg:h-170 lg:ml-10 lg:mt-0 ");
+                setTextStyle("lg:w-1/2 lg:h-170 h-200 lg:ml-10 lg:mt-0 lg:p-0 p-6");
+                setSelectedText(projetos[idx].desc);
+            },800)
+
+            setTimeout(()=> {
+                setTextStyle("lg:w-1/2 lg:h-170 lg:ml-10 lg:mt-0 lg:p-0 p-6");
                 setSelectedText(projetos[idx].desc);
             },1000)
         }
@@ -50,7 +60,7 @@ const projetos = [
         img: "/InsightWiseV.png", 
         fundo: "bg-[rgb(135,36,255)] [box-shadow:inset_0_-30_60px_20px_rgb(119,0,255)]", 
         delay: "delay-100", 
-        desc: "descrição de INSIGHTWISE Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam veniam explicabo illum et ut animi sunt, vel odit iste. Quo error modi asperiores commodi aliquid magni repellat dolor assumenda consequuntur! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam veniam explicabo illum et ut animi sunt, vel odit iste. Quo error modi asperiores commodi aliquid magni repellat dolor assumenda consequuntur! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam veniam explicabo illum et ut animi sunt, vel odit iste. Quo error modi asperiores commodi aliquid magni repellat dolor assumenda consequuntur! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam veniam explicabo illum et ut animi sunt, vel odit iste. Quo error modi asperiores commodi aliquid magni repellat dolor assumenda consequuntur! " 
+        desc: "descrição de INSIGHTWISE Lorem ipsum dolor sit, amet consectetur adipisicaaaaaaaaaaaaaaa a aaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaing elit. Nam veniam explicabo illum et ut animi sunt, vel odit iste. Quo error modi asperiores commodi aliquid magni repellat dolor assumenda consequuntur! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam veniam explicabo illum et ut animi sunt, vel odit iste. Quo error modi asperiores commodi aliquid magni repellat dolor assumenda consequuntur! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam veniam explicabo illum et ut animi sunt, vel odit iste. Quo error modi asperiores commodi aliquid magni repellat dolor assumenda consequuntur! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam veniam explicabo illum et ut animi sunt, vel odit iste. Quo error modi asperiores commodi aliquid magni repellat dolor assumenda consequuntur! " 
     },
     { 
         img: "/PortoBikeV.png", 
@@ -119,9 +129,9 @@ const projetos = [
     ) : null;
 
     return (
-        <div className="w-full flex lg:flex-row flex-col justify-between lg:mt-10 xl:w-300">
-            <div className={`${wrapperW}`}>
-                <div className="h-full w-full flex flex-wrap justify-center">
+        <div className=" w-full flex lg:flex-row flex-col justify-between lg:mt-10 xl:w-300">
+            <div className={`${wrapperW} `}>
+                <div className="w-full flex flex-wrap justify-center">
                     {ProjectCards}
                 </div>
             </div>
