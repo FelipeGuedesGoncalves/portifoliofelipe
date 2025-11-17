@@ -77,7 +77,7 @@ export default function Home() {
       </section>
 
 
-      <section id="portShow" className="w-full bg-neutral-900 md:p-15 sm:p-17 sm:pt-23 p-5 lg:p-10 flex flex-col items-center justify-center">
+      <section id="portShow" className="w-full bg-neutral-900 md:p-15 sm:p-17 sm:pt-23 p-0 lg:p-10 flex flex-col items-center justify-center">
         <h2 className={`${S4.className} md:text-xl xl:w-280 w-full lg:p-0 p-10`}>Meus Trabalhos</h2>
         <PortShow/>
       </section>

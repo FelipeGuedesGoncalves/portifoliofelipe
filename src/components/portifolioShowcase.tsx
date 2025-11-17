@@ -18,12 +18,14 @@ export default function PortShow() {
     const [buttonStyle, setButtonStyle] = useState<string | null>("text-transparent");
     const [backButtonStyle, setBackButtonStyle] = useState<string | null>("text-transparent");
     const [areaScrollavel, setAreaScrollavel] = useState<string | null>(null);
+    const [mobilePadding, setMobilePadding] = useState <string | null>(null);
 
 
 
     function handleClick(idx: number) {
         if (selected === idx) {
             // Deselecionando
+
             setDisabled(true);
             setSumir(null);
                             setSumirCard("z-1 absolute")
@@ -52,13 +54,14 @@ export default function PortShow() {
                 setTextStyle("");
                 setSelectedText(null)
                 setCarouselStyle("z-0 hidden !rounded-xl")
+                            setMobilePadding("p-0")
             }, 1550);
         } else {
             // Selecionando
             setSumirCard("z-1")
             setSelected(idx);
             setDisabled(true);
-
+setMobilePadding("sm:p-0 p-5")
             setTimeout(() => {
                 setSumir("hidden");
                 setWrapperW("lg:flex-shrink-0 xl:w-210 aspect-[16/9] w-full");
@@ -229,7 +232,7 @@ export default function PortShow() {
 
 
     return (
-        <div className="w-full flex xl:flex-row flex-col justify-between lg:mt-10 xl:w-300">
+        <div className={`w-full flex xl:flex-row flex-col justify-between lg:mt-10 xl:w-300 ${mobilePadding}`}>
 
 
 
