@@ -25,7 +25,7 @@ export default function PortShow() {
             setSumir(null);
             setSumirCard(null)
 
-            setTextStyle("lg:w-full lg:h-170 h-200 lg:ml-10 lg:mt-0 lg:p-0 p-6");
+            setTextStyle("lg:w-full lg:h-170 h-200 lg:ml-10 lg:mt-0 lg:p-0");
 
             setTimeout(() => {
                 setTextStyle("lg:w-full lg:mt-0 lg:p-0 px-6 h-0");
@@ -45,24 +45,24 @@ export default function PortShow() {
 
             setTimeout(() => {
                 setSumir("hidden");
-                setWrapperW("lg:flex-shrink-0 xl:w-210 lg:h-118 h-100 w-full lg:p-0 p-6");
+                setWrapperW("lg:flex-shrink-0 xl:w-210 aspect-[16/9] w-full");
                 setDisabled(false);
-                setTextStyle("lg:w-full h-0 lg:mt-0 lg:p-0 p-6");
+                setTextStyle("lg:w-full h-0 lg:mt-0 lg:p-0");
                 setSelectedImage(projetos[idx].imagens[0])
             }, 600);
 
             setTimeout(() => {
-                setTextStyle("lg:w-full lg:h-118 h-200 lg:ml-10 lg:mt-0 lg:p-0 p-6");
+                setTextStyle("lg:w-full lg:100 h-200 lg:ml-10 lg:mt-0 lg:p-0");
                 setSelectedText(projetos[idx].desc);
             }, 800)
 
             setTimeout(() => {
-                setTextStyle("xl:w-full xl:h-118 xl:ml-10 xl:mt-0 xl:p-0 p-6 mt-10");
+                setTextStyle("xl:w-full xl:h-118 xl:ml-10 xl:mt-0 xl:p-0 mt-10");
                 setSumirCard("opacity-0 pointer-events-none absolute z-1")
             }, 1000)
 
             setTimeout(() => {
-                setCarouselStyle("lg:h-118 xl:w-210 h-100 w-full absolute z-0 overflow-y-auto scrollbar-hide")
+                setCarouselStyle("lg:aspect-[16/9] xl:w-210 h-1/2 w-full absolute z-0 overflow-y-auto scrollbar-hide")
                 setButtonStyle("w-13 h-22 bg-neutral-500 transition-all duration-200 opacity-30 hover:opacity-100 [box-shadow:inset_0_0_20px_6px_rgba(0,0,0,0.575)]")
                 setSelectedImageProps(2000)
             }, 1300)
@@ -116,7 +116,7 @@ export default function PortShow() {
             capa: "/BabyCare/BabyCareV.png",
             fundo: "bg-[rgb(73,106,247)] [box-shadow:inset_0_-30_60px_20px_rgb(99,66,245)]",
             delay: "delay-700",
-            desc: "descrição de BABYCARE Lorem ipsumLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum doloLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitr sitLorem ipsum dolor sitLorem ipsum dolor sit dolor sit...",
+            desc: "descrição de BABYCARE Lorem ipsumLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum doloLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitr sitLorem ipsum dolor sitLorem ipsum dolor sit dolor sit...11111111111111 11111111 111111 1111 11111111 111111 22222222222 222222222222 222222222222222 222222222 22222222222 333333333 333333 333333333333 33333333 4444444444444 4444 444 44444 4444444 444444 555555555 5555 555 555 5555555555 55555555 666666 66666666666 666666 66666 6666666 ",
             imagens: Array.from({ length: 3 }, (_, i) => `/BabyCare/${i + 1}.png`)
         },
         {
@@ -138,7 +138,7 @@ export default function PortShow() {
                     ${selected === null
                         ? `lg:h-70 lg:w-60 lg:p-14 lg:m-5 card p-8 w-43 m-2 h-50`
                         : selected === index
-                            ? `delay-600 lg:h-118 lg:p-0 p-10 h-100 w-full ${sumirCard}`
+                            ? `delay-600 lg:aspect-[16/9] lg:p-0 p-10 aspect-[16/9] w-full ${sumirCard}`
                             : `scale-0 opacity-0 ${sumir} w-0 h-0`
                     }`}
             >
@@ -182,9 +182,15 @@ const Carousel = selected === null ? null : (
     >
       ▶
     </button>
+        <button
+      className={`absolute flex items-center justify-center pl-2 right-0 top-0 transform rounded !rounded-4xl !rounded-tl-none !rounded-tr-none !rounded-br-none ${buttonStyle}`}
+      onClick={Avancar}
+    >
+      ▶
+    </button>
 
     {/* Área scrollável */}
-    <div className="overflow-y-auto scrollbar-hide h-full w-full">
+    <div className="overflow-y-auto scrollbar-hide aspect-[16/9] w-full">
       <Image
         className=""
         alt=""
