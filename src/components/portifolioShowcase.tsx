@@ -15,6 +15,7 @@ export default function PortShow() {
     const [selectedImage, setSelectedImage] = useState<string>("/error.png");
     const [selectedImageProps, setSelectedImageProps] = useState<number>(0);
     const [carouselStyle, setCarouselStyle] = useState<string | null>(null);
+    const [buttonStyle, setButtonStyle] = useState<string | null>("text-transparent");
 
 
     function handleClick(idx: number) {
@@ -44,25 +45,26 @@ export default function PortShow() {
 
             setTimeout(() => {
                 setSumir("hidden");
-                setWrapperW("lg:flex-shrink-0 lg:w-150 lg:h-170 h-100 w-full lg:p-0 p-6");
+                setWrapperW("lg:flex-shrink-0 xl:w-210 lg:h-118 h-100 w-full lg:p-0 p-6");
                 setDisabled(false);
                 setTextStyle("lg:w-full h-0 lg:mt-0 lg:p-0 p-6");
                 setSelectedImage(projetos[idx].imagens[0])
             }, 600);
 
             setTimeout(() => {
-                setTextStyle("lg:w-full lg:h-170 h-200 lg:ml-10 lg:mt-0 lg:p-0 p-6");
+                setTextStyle("lg:w-full lg:h-118 h-200 lg:ml-10 lg:mt-0 lg:p-0 p-6");
                 setSelectedText(projetos[idx].desc);
             }, 800)
 
             setTimeout(() => {
-                setTextStyle("lg:w-full lg:h-170 lg:ml-10 lg:mt-0 lg:p-0 p-6 mt-10");
+                setTextStyle("xl:w-full xl:h-118 xl:ml-10 xl:mt-0 xl:p-0 p-6 mt-10");
                 setSumirCard("opacity-0 pointer-events-none absolute z-1")
             }, 1000)
 
             setTimeout(() => {
-                setCarouselStyle("lg:h-170 lg:w-150 h-100 w-full bg-red-400 absolute z-0 overflow-y-auto")
-                setSelectedImageProps(1000)
+                setCarouselStyle("lg:h-118 xl:w-210 h-100 w-full absolute z-0 overflow-y-auto scrollbar-hide")
+                setButtonStyle("w-13 h-22 bg-neutral-500 transition-all duration-200 opacity-30 hover:opacity-100 [box-shadow:inset_0_0_20px_6px_rgba(0,0,0,0.575)]")
+                setSelectedImageProps(2000)
             }, 1300)
         }
     }
@@ -115,7 +117,7 @@ export default function PortShow() {
             fundo: "bg-[rgb(73,106,247)] [box-shadow:inset_0_-30_60px_20px_rgb(99,66,245)]",
             delay: "delay-700",
             desc: "descrição de BABYCARE Lorem ipsumLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum doloLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitr sitLorem ipsum dolor sitLorem ipsum dolor sit dolor sit...",
-            imagens: Array.from({ length: 4 }, (_, i) => `/InsightWise/${i + 1}.png`)
+            imagens: Array.from({ length: 3 }, (_, i) => `/BabyCare/${i + 1}.png`)
         },
         {
             capa: "/Geeko/GeekoV.png",
@@ -136,7 +138,7 @@ export default function PortShow() {
                     ${selected === null
                         ? `lg:h-70 lg:w-60 lg:p-14 lg:m-5 card p-8 w-43 m-2 h-50`
                         : selected === index
-                            ? `delay-600 lg:h-170 lg:p-0 p-10 h-100 w-full ${sumirCard}`
+                            ? `delay-600 lg:h-118 lg:p-0 p-10 h-100 w-full ${sumirCard}`
                             : `scale-0 opacity-0 ${sumir} w-0 h-0`
                     }`}
             >
@@ -165,19 +167,35 @@ function Voltar() {
 }
 
 
-    const Carousel = selected === null ? null : (
-        <div className={`rounded-xl ${carouselStyle}`} style={{ maxHeight: '100%' }}>
-            <button className="w-20 h-20 bg-red-500" onClick={Voltar}></button>
-            <button className="w-20 h-20 bg-red-500" onClick={Avancar}></button>
-            <Image
-                className=""
-                alt=""
-                src={selectedImage}
-                width={selectedImageProps}
-                height={selectedImageProps}
-            />
-        </div>
-    )
+const Carousel = selected === null ? null : (
+  <div className={`relative rounded-xl ${carouselStyle}`} style={{ maxHeight: '100%' }}>
+    {/* Botões fora do scroll */}
+    <button
+      className={`absolute flex items-center justify-center pr-2 left-0 top-1/2 transform -translate-y-1/2 rounded !rounded-4xl !rounded-tl-none !rounded-bl-none ${buttonStyle}`}
+      onClick={Voltar}
+    >
+      ◀
+    </button>
+    <button
+      className={`absolute flex items-center justify-center pl-2 right-0 top-1/2 transform -translate-y-1/2 rounded !rounded-4xl !rounded-tr-none !rounded-br-none ${buttonStyle}`}
+      onClick={Avancar}
+    >
+      ▶
+    </button>
+
+    {/* Área scrollável */}
+    <div className="overflow-y-auto scrollbar-hide h-full w-full">
+      <Image
+        className=""
+        alt=""
+        src={selectedImage}
+        width={selectedImageProps}
+        height={selectedImageProps}
+      />
+    </div>
+  </div>
+);
+
 
 
     const ProjectDesc = selected !== null ? (
@@ -187,7 +205,7 @@ function Voltar() {
 
 
     return (
-        <div className="w-full flex lg:flex-row flex-col justify-between lg:mt-10 xl:w-300">
+        <div className="w-full flex xl:flex-row flex-col justify-between lg:mt-10 xl:w-300">
 
 
 
