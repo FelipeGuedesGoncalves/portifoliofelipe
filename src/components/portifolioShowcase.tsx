@@ -47,7 +47,7 @@ export default function PortShow() {
                 setWrapperW("lg:flex-shrink-0 lg:w-150 lg:h-170 h-100 w-full lg:p-0 p-6");
                 setDisabled(false);
                 setTextStyle("lg:w-full h-0 lg:mt-0 lg:p-0 p-6");
-                setSelectedImage(projetos[idx].imagens[3])
+                setSelectedImage(projetos[idx].imagens[0])
             }, 600);
 
             setTimeout(() => {
@@ -146,18 +146,38 @@ export default function PortShow() {
         );
     });
 
+function Avancar() {
+    if (selected === null) return;
 
-const Carousel = selected === null ? null : (
-  <div className={`rounded-xl ${carouselStyle}`} style={{ maxHeight: '100%' }}>
-    <Image
-      className=""
-      alt=""
-      src={selectedImage}
-      width={selectedImageProps}
-      height={selectedImageProps}
-    />
-  </div>
-)
+    const imagens = projetos[selected].imagens;
+    const currentIndex = imagens.indexOf(selectedImage); // pega o índice atual
+    const nextIndex = currentIndex >= imagens.length - 1 ? 0 : currentIndex + 1;
+    setSelectedImage(imagens[nextIndex]); // mantém string
+}
+
+function Voltar() {
+    if (selected === null) return;
+
+    const imagens = projetos[selected].imagens;
+    const currentIndex = imagens.indexOf(selectedImage); // pega o índice atual
+    const prevIndex = currentIndex <= 0 ? imagens.length - 1 : currentIndex - 1;
+    setSelectedImage(imagens[prevIndex]); // mantém string
+}
+
+
+    const Carousel = selected === null ? null : (
+        <div className={`rounded-xl ${carouselStyle}`} style={{ maxHeight: '100%' }}>
+            <button className="w-20 h-20 bg-red-500" onClick={Voltar}></button>
+            <button className="w-20 h-20 bg-red-500" onClick={Avancar}></button>
+            <Image
+                className=""
+                alt=""
+                src={selectedImage}
+                width={selectedImageProps}
+                height={selectedImageProps}
+            />
+        </div>
+    )
 
 
     const ProjectDesc = selected !== null ? (
