@@ -18,7 +18,7 @@ export default function PortShow() {
     const [buttonStyle, setButtonStyle] = useState<string | null>("text-transparent");
     const [backButtonStyle, setBackButtonStyle] = useState<string | null>("text-transparent");
     const [areaScrollavel, setAreaScrollavel] = useState<string | null>(null);
-    const [mobilePadding, setMobilePadding] = useState <string | null>(null);
+    const [mobilePadding, setMobilePadding] = useState<string | null>(null);
 
 
 
@@ -28,17 +28,20 @@ export default function PortShow() {
 
             setDisabled(true);
             setSumir(null);
-                            setSumirCard("z-1 absolute")
+            setSumirCard("z-1 absolute")
             setButtonStyle("hidden")
             setBackButtonStyle("hidden")
 
             setTextStyle("lg:w-full lg:h-170 h-200 lg:ml-10 lg:mt-0 lg:p-0");
 
-                            setCarouselStyle("z-0 !rounded-xl")
+            setCarouselStyle("z-0 !rounded-xl")
 
             setTimeout(() => {
                 setTextStyle("lg:w-full lg:mt-0 lg:p-0 px-6 h-0");
-                setCarouselStyle("!rounded-xl lg:aspect-[16/9] xl:w-210 h-1/2 w-full absolute z-0 overflow-y-auto scrollbar-hide")
+                projetos[idx].ambiente === "mobile"
+                    ? setCarouselStyle("!rounded-xl lg:aspect-[0.8] w-[100%] absolute z-0 overflow-y-auto scrollbar-hide")
+                    : setCarouselStyle("!rounded-xl lg:aspect-[16/9] xl:w-210 h-1/2 w-full absolute z-0 overflow-y-auto scrollbar-hide");
+
 
             }, 200)
 
@@ -54,17 +57,17 @@ export default function PortShow() {
                 setTextStyle("");
                 setSelectedText(null)
                 setCarouselStyle("z-0 hidden !rounded-xl")
-                            setMobilePadding("p-0")
+                setMobilePadding("p-0")
             }, 1550);
         } else {
             // Selecionando
             setSumirCard("z-1")
             setSelected(idx);
             setDisabled(true);
-setMobilePadding("sm:p-0 p-5")
+
             setTimeout(() => {
                 setSumir("hidden");
-                setWrapperW("lg:flex-shrink-0 xl:w-210 aspect-[16/9] w-full");
+                projetos[idx].ambiente === "mobile" ? setWrapperW(`lg:flex-shrink-0 lg:aspect-[0.8] w-[40%] rounded rounded-xl lg:p-0 p-10 ${sumirCard}`) : setWrapperW(`lg:flex-shrink-0 xl:w-210 lg:p-0 p-10 aspect-[16/9] w-full ${sumirCard}`)
                 setDisabled(false);
                 setTextStyle("lg:w-full h-0 lg:mt-0 lg:p-0");
                 setSelectedImage(projetos[idx].imagens[0])
@@ -73,6 +76,7 @@ setMobilePadding("sm:p-0 p-5")
             setTimeout(() => {
                 setTextStyle("lg:w-full lg:100 h-200 lg:ml-10 lg:mt-0 lg:p-0");
                 setSelectedText(projetos[idx].desc);
+                setMobilePadding("sm:p-0 p-5")
             }, 800)
 
             setTimeout(() => {
@@ -81,31 +85,37 @@ setMobilePadding("sm:p-0 p-5")
             }, 1000)
 
             setTimeout(() => {
-                setCarouselStyle("!rounded-xl lg:aspect-[16/9] xl:w-210 h-1/2 w-full absolute z-0 overflow-y-auto scrollbar-hide")
+                projetos[idx].ambiente === "mobile"
+                    ? setCarouselStyle("!rounded-xl lg:aspect-[0.8] h-1/2 w-[100%] absolute z-0 overflow-y-auto scrollbar-hide")
+                    : setCarouselStyle("!rounded-xl lg:aspect-[16/9]  xl:w-210 h-1/2 w-full absolute z-0 overflow-y-auto scrollbar-hide");
+
                 setButtonStyle("w-13 h-22 bg-neutral-500 transition-all duration-200 opacity-30 hover:opacity-100 [box-shadow:inset_0_0_20px_6px_rgba(0,0,0,0.575)]")
                 setBackButtonStyle("w-18 h-12 bg-blue-600")
                 setSelectedImageProps(2000)
-                setAreaScrollavel("!rounded-xl overflow-y-auto scrollbar-hide aspect-[16/9] w-full")
+                projetos[idx].ambiente === "mobile" ? setAreaScrollavel(`bg-blue-500 !rounded-xl overflow-y-auto scrollbar-hide aspect-[0.8] lg:p-0 p-10 w-[100%]`) : setAreaScrollavel(`!rounded-xl overflow-y-auto scrollbar-hide lg:p-0 p-10 aspect-[16/9] w-full`)
             }, 1300)
         }
     }
 
     const projetos = [
         {
+            ambiente: "mobile",
             capa: "/InsightWise/InsightWiseV.png",
             fundo: "bg-[rgb(135,36,255)] [box-shadow:inset_0_-30_60px_20px_rgb(119,0,255)]",
             delay: "delay-100",
-            desc: "descrição de INSIGHTWISE Lorem ipsum dolor sit...",
+            desc: "descrição de INSIGHTWISE Lorem ipsum dolor sit... descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...",
             imagens: Array.from({ length: 4 }, (_, i) => `/InsightWise/${i + 1}.png`)
         },
         {
+            ambiente: "desktop",
             capa: "/PortoBike/PortoBikeV.png",
             fundo: "bg-[rgb(255,255,255)]",
             delay: "delay-200",
             desc: "descrição de PORTOBIKE Lorem ipsum dolor sit...",
-            imagens: Array.from({ length: 3 }, (_, i) => `/PortoBike/${i + 1}.png`)
+            imagens: Array.from({ length: 6 }, (_, i) => `/PortoBike/${i + 1}.png`)
         },
         {
+            ambiente: "mobile",
             capa: "/HeatWise/HeatWiseV.png",
             fundo: "bg-[rgb(255,168,0)] [box-shadow:inset_0_-30_60px_20px_rgb(255,136,0)]",
             delay: "delay-300",
@@ -113,13 +123,15 @@ setMobilePadding("sm:p-0 p-5")
             imagens: Array.from({ length: 3 }, (_, i) => `/InsightWise/${i + 1}.png`)
         },
         {
+            ambiente: "desktop",
             capa: "/Hunzer/HunzerV.png",
             fundo: "bg-[rgb(147,215,3)] [box-shadow:inset_0_-30_60px_20px_rgb(100,199,43)]",
             delay: "delay-400",
             desc: "descrição de HUNZER Lorem ipsum dolor sit...",
-            imagens: Array.from({ length: 3 }, (_, i) => `/InsightWise/${i + 1}.png`)
+            imagens: Array.from({ length: 7 }, (_, i) => `/Hunzer/${i + 1}.png`)
         },
         {
+            ambiente: "mobile",
             capa: "/BlueHope/BlueHopeV.png",
             fundo: "bg-[rgb(27,87,245)] [box-shadow:inset_0_-30_60px_20px_rgb(0,42,228)]",
             delay: "delay-500",
@@ -127,6 +139,7 @@ setMobilePadding("sm:p-0 p-5")
             imagens: Array.from({ length: 3 }, (_, i) => `/InsightWise/${i + 1}.png`)
         },
         {
+            ambiente: "mobile",
             capa: "/GridHub/GridHubV.png",
             fundo: "bg-[rgb(0,135,255)] [box-shadow:inset_0_-30_60px_20px_rgb(0,102,255)]",
             delay: "delay-600",
@@ -134,18 +147,20 @@ setMobilePadding("sm:p-0 p-5")
             imagens: Array.from({ length: 3 }, (_, i) => `/InsightWise/${i + 1}.png`)
         },
         {
+            ambiente: "desktop",
             capa: "/BabyCare/BabyCareV.png",
             fundo: "bg-[rgb(73,106,247)] [box-shadow:inset_0_-30_60px_20px_rgb(99,66,245)]",
             delay: "delay-700",
             desc: "descrição de BABYCARE Lorem ipsumLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum doloLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitr sitLorem ipsum dolor sitLorem ipsum dolor sit dolor sit...11111111111111 11111111 111111 1111 11111111 111111 22222222222 222222222222 222222222222222 222222222 22222222222 333333333 333333 333333333333 33333333 4444444444444 4444 444 44444 4444444 444444 555555555 5555 555 555 5555555555 55555555 666666 66666666666 666666 66666 6666666 ",
-            imagens: Array.from({ length: 3 }, (_, i) => `/BabyCare/${i + 1}.png`)
+            imagens: Array.from({ length: 11 }, (_, i) => `/BabyCare/${i + 1}.png`)
         },
         {
+            ambiente: "desktop",
             capa: "/Geeko/GeekoV.png",
             fundo: "bg-[rgb(255,31,53)] [box-shadow:inset_0_-30_60px_20px_rgb(255,0,98)]",
             delay: "delay-800",
             desc: "descrição de GEEKO Lorem ipsum dolor sit...",
-            imagens: Array.from({ length: 3 }, (_, i) => `/InsightWise/${i + 1}.png`)
+            imagens: Array.from({ length: 5 }, (_, i) => `/Geeko/${i + 1}.png`)
         }
     ];
 
@@ -155,11 +170,16 @@ setMobilePadding("sm:p-0 p-5")
                 disabled={disabled}
                 key={index}
                 onClick={() => handleClick(index)}
-                className={`overflow-hidden !rounded-xl ${projeto.fundo} ${projeto.delay} flex justify-center items-center transition-all duration-600
+                className={`overflow-hidden !rounded-xl ${projeto.fundo} ${projeto.delay} 
+                flex justify-center items-center transition-all duration-600
                     ${selected === null
                         ? `lg:h-70 lg:w-60 lg:p-14 lg:m-5 card p-8 w-43 m-2 h-50`
                         : selected === index
-                            ? `delay-600 lg:aspect-[16/9] lg:p-0 p-10 aspect-[16/9] w-full ${sumirCard}`
+
+                            ? projeto.ambiente === "mobile" ? `delay-600 lg:aspect-[0.8] w-[100%] lg:p-0 p-10 ${sumirCard}` : `delay-600 lg:p-0 p-10 aspect-[16/9] w-full ${sumirCard}`
+
+
+
                             : `scale-0 opacity-0 ${sumir} w-0 h-0`
                     }`}
             >
