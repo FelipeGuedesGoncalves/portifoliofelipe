@@ -16,6 +16,9 @@ export default function PortShow() {
     const [selectedImageProps, setSelectedImageProps] = useState<number>(0);
     const [carouselStyle, setCarouselStyle] = useState<string | null>(null);
     const [buttonStyle, setButtonStyle] = useState<string | null>("text-transparent");
+    const [backButtonStyle, setBackButtonStyle] = useState<string | null>("text-transparent");
+    const [areaScrollavel, setAreaScrollavel] = useState<string | null>(null);
+
 
 
     function handleClick(idx: number) {
@@ -23,13 +26,24 @@ export default function PortShow() {
             // Deselecionando
             setDisabled(true);
             setSumir(null);
-            setSumirCard(null)
+                            setSumirCard("z-1 absolute")
+            setButtonStyle("hidden")
+            setBackButtonStyle("hidden")
 
             setTextStyle("lg:w-full lg:h-170 h-200 lg:ml-10 lg:mt-0 lg:p-0");
 
+                            setCarouselStyle("z-0 !rounded-xl")
+
             setTimeout(() => {
                 setTextStyle("lg:w-full lg:mt-0 lg:p-0 px-6 h-0");
+                setCarouselStyle("!rounded-xl lg:aspect-[16/9] xl:w-210 h-1/2 w-full absolute z-0 overflow-y-auto scrollbar-hide")
+
             }, 200)
+
+            setTimeout(() => {
+
+
+            }, 700)
 
             setTimeout(() => {
                 setSelected(null);
@@ -37,9 +51,11 @@ export default function PortShow() {
                 setWrapperW(null);
                 setTextStyle("");
                 setSelectedText(null)
-            }, 850);
+                setCarouselStyle("z-0 hidden !rounded-xl")
+            }, 1550);
         } else {
             // Selecionando
+            setSumirCard("z-1")
             setSelected(idx);
             setDisabled(true);
 
@@ -62,9 +78,11 @@ export default function PortShow() {
             }, 1000)
 
             setTimeout(() => {
-                setCarouselStyle("lg:aspect-[16/9] xl:w-210 h-1/2 w-full absolute z-0 overflow-y-auto scrollbar-hide")
+                setCarouselStyle("!rounded-xl lg:aspect-[16/9] xl:w-210 h-1/2 w-full absolute z-0 overflow-y-auto scrollbar-hide")
                 setButtonStyle("w-13 h-22 bg-neutral-500 transition-all duration-200 opacity-30 hover:opacity-100 [box-shadow:inset_0_0_20px_6px_rgba(0,0,0,0.575)]")
+                setBackButtonStyle("w-18 h-12 bg-blue-600")
                 setSelectedImageProps(2000)
+                setAreaScrollavel("!rounded-xl overflow-y-auto scrollbar-hide aspect-[16/9] w-full")
             }, 1300)
         }
     }
@@ -148,59 +166,59 @@ export default function PortShow() {
         );
     });
 
-function Avancar() {
-    if (selected === null) return;
+    function Avancar() {
+        if (selected === null) return;
 
-    const imagens = projetos[selected].imagens;
-    const currentIndex = imagens.indexOf(selectedImage); // pega o índice atual
-    const nextIndex = currentIndex >= imagens.length - 1 ? 0 : currentIndex + 1;
-    setSelectedImage(imagens[nextIndex]); // mantém string
-}
+        const imagens = projetos[selected].imagens;
+        const currentIndex = imagens.indexOf(selectedImage); // pega o índice atual
+        const nextIndex = currentIndex >= imagens.length - 1 ? 0 : currentIndex + 1;
+        setSelectedImage(imagens[nextIndex]); // mantém string
+    }
 
-function Voltar() {
-    if (selected === null) return;
+    function Voltar() {
+        if (selected === null) return;
 
-    const imagens = projetos[selected].imagens;
-    const currentIndex = imagens.indexOf(selectedImage); // pega o índice atual
-    const prevIndex = currentIndex <= 0 ? imagens.length - 1 : currentIndex - 1;
-    setSelectedImage(imagens[prevIndex]); // mantém string
-}
+        const imagens = projetos[selected].imagens;
+        const currentIndex = imagens.indexOf(selectedImage); // pega o índice atual
+        const prevIndex = currentIndex <= 0 ? imagens.length - 1 : currentIndex - 1;
+        setSelectedImage(imagens[prevIndex]); // mantém string
+    }
 
 
-const Carousel = selected === null ? null : (
-  <div className={`relative rounded-xl ${carouselStyle}`} style={{ maxHeight: '100%' }}>
-    {/* Botões fora do scroll */}
-    <button
-      className={`absolute flex items-center justify-center pr-2 left-0 top-1/2 transform -translate-y-1/2 rounded !rounded-4xl !rounded-tl-none !rounded-bl-none ${buttonStyle}`}
-      onClick={Voltar}
-    >
-      ◀
-    </button>
-    <button
-      className={`absolute flex items-center justify-center pl-2 right-0 top-1/2 transform -translate-y-1/2 rounded !rounded-4xl !rounded-tr-none !rounded-br-none ${buttonStyle}`}
-      onClick={Avancar}
-    >
-      ▶
-    </button>
-        <button
-      className={`absolute flex items-center justify-center pl-2 right-0 top-0 transform rounded !rounded-4xl !rounded-tl-none !rounded-tr-none !rounded-br-none ${buttonStyle}`}
-      onClick={Avancar}
-    >
-      ▶
-    </button>
+    const Carousel = selected === null ? null : (
+        <div className={`z-0 transition-all duration-600 relative rounded-xl ${carouselStyle}`} style={{ maxHeight: '100%' }}>
+            {/* Botões fora do scroll */}
+            <button
+                className={`absolute flex items-center justify-center pr-2 left-0 top-1/2 transform -translate-y-1/2 rounded !rounded-4xl !rounded-tl-none !rounded-bl-none ${buttonStyle}`}
+                onClick={Voltar}
+            >
+                ◀
+            </button>
+            <button
+                className={`absolute flex items-center justify-center pl-2 right-0 top-1/2 transform -translate-y-1/2 rounded !rounded-4xl !rounded-tr-none !rounded-br-none ${buttonStyle}`}
+                onClick={Avancar}
+            >
+                ▶
+            </button>
+            <button
+                className={`absolute flex items-center justify-center pl-2 right-0 top-0 transform rounded !rounded-4xl !rounded-tl-none !rounded-tr-none !rounded-br-none ${backButtonStyle}`}
+                onClick={() => handleClick(selected)}
+            >
+                ↩
+            </button>
 
-    {/* Área scrollável */}
-    <div className="overflow-y-auto scrollbar-hide aspect-[16/9] w-full">
-      <Image
-        className=""
-        alt=""
-        src={selectedImage}
-        width={selectedImageProps}
-        height={selectedImageProps}
-      />
-    </div>
-  </div>
-);
+            {/* Área scrollável */}
+            <div className={`transition-all duration-600 ${areaScrollavel}`}>
+                <Image
+                    className=""
+                    alt=""
+                    src={selectedImage}
+                    width={selectedImageProps}
+                    height={selectedImageProps}
+                />
+            </div>
+        </div>
+    );
 
 
 
@@ -216,7 +234,7 @@ const Carousel = selected === null ? null : (
 
 
             <div className={`relative ${wrapperW}`}>
-                <div className="w-full flex flex-wrap justify-center">
+                <div className="w-full relative flex flex-wrap justify-center">
                     {Carousel}
                     {ProjectCards}
                 </div>
