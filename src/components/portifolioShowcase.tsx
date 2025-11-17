@@ -28,7 +28,7 @@ export default function PortShow() {
 
             setDisabled(true);
             setSumir(null);
-            setSumirCard("z-1 absolute")
+            projetos[idx].ambiente === "mobile" ? setSumirCard("z-1 absolute h-[100%]") : setSumirCard("z-1 absolute")
             setButtonStyle("hidden")
             setBackButtonStyle("hidden")
 
@@ -61,7 +61,7 @@ export default function PortShow() {
             }, 1550);
         } else {
             // Selecionando
-            setSumirCard("z-1")
+            projetos[idx].ambiente === "mobile" ? setSumirCard("z-1 h-[100%]") : setSumirCard("z-1")
             setSelected(idx);
             setDisabled(true);
 
@@ -81,7 +81,7 @@ export default function PortShow() {
 
             setTimeout(() => {
                 projetos[idx].ambiente === "mobile" ? setTextStyle("lg:w-full xl:h-118 lg:ml-10 xl:mt-0 xl:p-0 mt-0") : setTextStyle("lg:w-full xl:h-118 xl:ml-10 lg:ml-0 xl:mt-0 xl:p-0 mt-10")
-                setSumirCard("opacity-0 pointer-events-none absolute z-1")
+                projetos[idx].ambiente === "mobile" ? setSumirCard("opacity-0 pointer-events-none absolute z-1") : setSumirCard("opacity-0 pointer-events-none absolute z-1")
             }, 1000)
 
             setTimeout(() => {
