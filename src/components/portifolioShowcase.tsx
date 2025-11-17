@@ -7,11 +7,14 @@ import './customCard.css'
 export default function PortShow() {
     const [selected, setSelected] = useState<number | null>(null);
     const [sumir, setSumir] = useState<string | null>(null);
+    const [sumirCard, setSumirCard] = useState<string | null>(null);
     const [disabled, setDisabled] = useState<boolean>(false);
     const [wrapperW, setWrapperW] = useState<string | null>(null);
     const [textStyle, setTextStyle] = useState<string | null>(null);
     const [selectedText, setSelectedText] = useState<string | null>(null);
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [selectedImage, setSelectedImage] = useState<string>("/error.png");
+    const [selectedImageProps, setSelectedImageProps] = useState<number>(0);
+    const [carouselStyle, setCarouselStyle] = useState<string | null>(null);
 
 
     function handleClick(idx: number) {
@@ -19,6 +22,7 @@ export default function PortShow() {
             // Deselecionando
             setDisabled(true);
             setSumir(null);
+            setSumirCard(null)
 
             setTextStyle("lg:w-full lg:h-170 h-200 lg:ml-10 lg:mt-0 lg:p-0 p-6");
 
@@ -40,9 +44,10 @@ export default function PortShow() {
 
             setTimeout(() => {
                 setSumir("hidden");
-                setWrapperW("lg:flex-shrink-0 lg:w-150 lg:p-0 p-6");
+                setWrapperW("lg:flex-shrink-0 lg:w-150 lg:h-170 h-100 w-full lg:p-0 p-6");
                 setDisabled(false);
                 setTextStyle("lg:w-full h-0 lg:mt-0 lg:p-0 p-6");
+                setSelectedImage(projetos[idx].imagens[3])
             }, 600);
 
             setTimeout(() => {
@@ -51,8 +56,14 @@ export default function PortShow() {
             }, 800)
 
             setTimeout(() => {
-                setTextStyle("lg:w-full lg:h-170 lg:ml-10 lg:mt-0 lg:p-0 p-6");
+                setTextStyle("lg:w-full lg:h-170 lg:ml-10 lg:mt-0 lg:p-0 p-6 mt-10");
+                setSumirCard("opacity-0 pointer-events-none absolute z-1")
             }, 1000)
+
+            setTimeout(() => {
+                setCarouselStyle("lg:h-170 lg:w-150 h-100 w-full bg-red-400 absolute z-0 overflow-y-auto")
+                setSelectedImageProps(1000)
+            }, 1300)
         }
     }
 
@@ -125,29 +136,44 @@ export default function PortShow() {
                     ${selected === null
                         ? `lg:h-70 lg:w-60 lg:p-14 lg:m-5 card p-8 w-43 m-2 h-50`
                         : selected === index
-                            ? "delay-600 lg:h-170 lg:p-0 p-10 h-100 w-full"
+                            ? `delay-600 lg:h-170 lg:p-0 p-10 h-100 w-full ${sumirCard}`
                             : `scale-0 opacity-0 ${sumir} w-0 h-0`
                     }`}
             >
-                    <Image alt="" src={projeto.capa} width={360} height={200} />
+                <Image alt="" src={projeto.capa} width={360} height={200} />
 
             </button>
         );
     });
 
+
+const Carousel = selected === null ? null : (
+  <div className={`rounded-xl ${carouselStyle}`} style={{ maxHeight: '100%' }}>
+    <Image
+      className=""
+      alt=""
+      src={selectedImage}
+      width={selectedImageProps}
+      height={selectedImageProps}
+    />
+  </div>
+)
+
+
     const ProjectDesc = selected !== null ? (
         <p className={`overflow-hidden transition-all duration-600 text-justify ${textStyle}`}>{selectedText}</p>
     ) : null;
 
-    
+
 
     return (
         <div className="w-full flex lg:flex-row flex-col justify-between lg:mt-10 xl:w-300">
-            
-            
-            
-            <div className={`${wrapperW}`}>
+
+
+
+            <div className={`relative ${wrapperW}`}>
                 <div className="w-full flex flex-wrap justify-center">
+                    {Carousel}
                     {ProjectCards}
                 </div>
             </div>
