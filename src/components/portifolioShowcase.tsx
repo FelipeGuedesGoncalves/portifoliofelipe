@@ -32,12 +32,12 @@ export default function PortShow() {
             setButtonStyle("hidden")
             setBackButtonStyle("hidden")
 
-            setTextStyle("lg:w-full lg:h-170 h-200 lg:ml-10 lg:mt-0 lg:p-0");
+            projetos[idx].ambiente === "mobile" ? setTextStyle("lg:w-full lg:h-170 h-200 lg:ml-10 lg:mt-0 lg:p-0") : setTextStyle("lg:w-full lg:h-170 h-200 lg:ml-0 lg:mt-0 lg:p-0")
 
             setCarouselStyle("z-0 !rounded-xl")
 
             setTimeout(() => {
-                setTextStyle("lg:w-full lg:mt-0 lg:p-0 px-6 h-0");
+                projetos[idx].ambiente === "mobile" ? setTextStyle("lg:w-full lg:mt-0 lg:p-0 px-6 h-0") : setTextStyle("lg:w-full lg:mt-0 lg:p-0 px-6 h-0")
                 projetos[idx].ambiente === "mobile"
                     ? setCarouselStyle("!rounded-xl lg:aspect-[0.8] w-[100%] absolute z-0 overflow-y-auto scrollbar-hide")
                     : setCarouselStyle("!rounded-xl lg:aspect-[16/9] xl:w-210 h-1/2 w-full absolute z-0 overflow-y-auto scrollbar-hide");
@@ -54,10 +54,10 @@ export default function PortShow() {
                 setSelected(null);
                 setDisabled(false);
                 setWrapperW(null);
-                setTextStyle("");
+                setTextStyle("")
                 setSelectedText(null)
                 setCarouselStyle("z-0 hidden !rounded-xl")
-                setMobilePadding("p-0")
+                projetos[idx].ambiente === "mobile" ? setMobilePadding("p-0 lg:flex-row") : setMobilePadding("p-0 xl:flex-row")
             }, 1550);
         } else {
             // Selecionando
@@ -67,20 +67,20 @@ export default function PortShow() {
 
             setTimeout(() => {
                 setSumir("hidden");
-                projetos[idx].ambiente === "mobile" ? setWrapperW(`lg:flex-shrink-0 lg:aspect-[0.8] w-[40%] rounded rounded-xl lg:p-0 p-10 ${sumirCard}`) : setWrapperW(`lg:flex-shrink-0 xl:w-210 lg:p-0 p-10 aspect-[16/9] w-full ${sumirCard}`)
+                projetos[idx].ambiente === "mobile" ? setWrapperW(`lg:flex-shrink-0 lg:aspect-[0.8] w-[40%] rounded rounded-xl lg:p-0  ${sumirCard}`) : setWrapperW(`lg:flex-shrink-0 xl:w-210 lg:p-0  aspect-[16/9] w-full ${sumirCard}`)
                 setDisabled(false);
-                setTextStyle("lg:w-full h-0 lg:mt-0 lg:p-0");
+                projetos[idx].ambiente === "mobile" ? setTextStyle("lg:w-full h-0 lg:mt-0 lg:p-0") :  setTextStyle("lg:w-full h-0 xl:ml-10 lg:mt-0 lg:p-0")
                 setSelectedImage(projetos[idx].imagens[0])
             }, 600);
 
             setTimeout(() => {
-                setTextStyle("lg:w-full lg:100 h-200 lg:ml-10 lg:mt-0 lg:p-0");
+                projetos[idx].ambiente === "mobile" ? setTextStyle("lg:w-full lg:100 h-200 lg:ml-10 lg:mt-0 lg:p-0") : setTextStyle("lg:w-full lg:100 xl:ml-10 h-200 lg:ml-0 lg:mt-0 lg:p-0")
                 setSelectedText(projetos[idx].desc);
-                setMobilePadding("sm:p-0 p-5")
+                projetos[idx].ambiente === "mobile" ? setMobilePadding("sm:p-0 p-5 lg:flex-row") : setMobilePadding("sm:p-0 p-5 xl:flex-row")
             }, 800)
 
             setTimeout(() => {
-                setTextStyle("xl:w-full xl:h-118 xl:ml-10 xl:mt-0 xl:p-0 mt-10");
+                projetos[idx].ambiente === "mobile" ? setTextStyle("lg:w-full xl:h-118 lg:ml-10 xl:mt-0 xl:p-0 mt-0") : setTextStyle("lg:w-full xl:h-118 xl:ml-10 lg:ml-0 xl:mt-0 xl:p-0 mt-10")
                 setSumirCard("opacity-0 pointer-events-none absolute z-1")
             }, 1000)
 
@@ -92,7 +92,7 @@ export default function PortShow() {
                 setButtonStyle("w-13 h-22 bg-neutral-500 transition-all duration-200 opacity-30 hover:opacity-100 [box-shadow:inset_0_0_20px_6px_rgba(0,0,0,0.575)]")
                 setBackButtonStyle("w-18 h-12 bg-blue-600")
                 setSelectedImageProps(2000)
-                projetos[idx].ambiente === "mobile" ? setAreaScrollavel(`bg-blue-500 !rounded-xl overflow-y-auto scrollbar-hide aspect-[0.8] lg:p-0 p-10 w-[100%]`) : setAreaScrollavel(`!rounded-xl overflow-y-auto scrollbar-hide lg:p-0 p-10 aspect-[16/9] w-full`)
+                projetos[idx].ambiente === "mobile" ? setAreaScrollavel(`bg-blue-500 !rounded-xl overflow-y-auto scrollbar-hide aspect-[0.8] lg:p-0  w-[100%]`) : setAreaScrollavel(`!rounded-xl overflow-y-auto scrollbar-hide lg:p-0  aspect-[16/9] w-full`)
             }, 1300)
         }
     }
@@ -104,7 +104,7 @@ export default function PortShow() {
             fundo: "bg-[rgb(135,36,255)] [box-shadow:inset_0_-30_60px_20px_rgb(119,0,255)]",
             delay: "delay-100",
             desc: "descrição de INSIGHTWISE Lorem ipsum dolor sit... descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...",
-            imagens: Array.from({ length: 4 }, (_, i) => `/InsightWise/${i + 1}.png`)
+            imagens: Array.from({ length: 7 }, (_, i) => `/InsightWise/${i + 1}.png`)
         },
         {
             ambiente: "desktop",
@@ -176,7 +176,7 @@ export default function PortShow() {
                         ? `lg:h-70 lg:w-60 lg:p-14 lg:m-5 card p-8 w-43 m-2 h-50`
                         : selected === index
 
-                            ? projeto.ambiente === "mobile" ? `delay-600 lg:aspect-[0.8] w-[100%] lg:p-0 p-10 ${sumirCard}` : `delay-600 lg:p-0 p-10 aspect-[16/9] w-full ${sumirCard}`
+                            ? projeto.ambiente === "mobile" ? `delay-600 lg:aspect-[0.8] w-[100%] lg:p-0  ${sumirCard}` : `delay-600 lg:p-0  aspect-[16/9] w-full ${sumirCard}`
 
 
 
@@ -252,7 +252,7 @@ export default function PortShow() {
 
 
     return (
-        <div className={`w-full flex xl:flex-row flex-col justify-between lg:mt-10 xl:w-300 ${mobilePadding}`}>
+        <div className={`w-full flex flex-col justify-between lg:mt-10 xl:w-300 ${mobilePadding}`}>
 
 
 
