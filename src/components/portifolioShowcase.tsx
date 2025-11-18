@@ -100,67 +100,67 @@ export default function PortShow() {
     const projetos = [
         {
             ambiente: "mobile",
-            capa: "/InsightWise/InsightWiseV.png",
+            capa: "./InsightWise/InsightWiseV.png",
             fundo: "bg-[rgb(135,36,255)] [box-shadow:inset_0_-30_60px_20px_rgb(119,0,255)]",
             delay: "delay-100",
             desc: "descrição de INSIGHTWISE Lorem ipsum dolor sit... descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...descrição de INSIGHTWISE Lorem ipsum dolor sit...",
-            imagens: Array.from({ length: 7 }, (_, i) => `/InsightWise/${i + 1}.png`)
+            imagens: Array.from({ length: 7 }, (_, i) => `./InsightWise/${i + 1}.png`)
         },
         {
             ambiente: "desktop",
-            capa: "/PortoBike/PortoBikeV.png",
+            capa: "./PortoBike/PortoBikeV.png",
             fundo: "bg-[rgb(255,255,255)]",
             delay: "delay-200",
             desc: "descrição de PORTOBIKE Lorem ipsum dolor sit...",
-            imagens: Array.from({ length: 6 }, (_, i) => `/PortoBike/${i + 1}.png`)
+            imagens: Array.from({ length: 6 }, (_, i) => `./PortoBike/${i + 1}.png`)
         },
         {
             ambiente: "mobile",
-            capa: "/HeatWise/HeatWiseV.png",
+            capa: "./HeatWise/HeatWiseV.png",
             fundo: "bg-[rgb(255,168,0)] [box-shadow:inset_0_-30_60px_20px_rgb(255,136,0)]",
             delay: "delay-300",
             desc: "O HeatWise seria uma plataforma inovadora que utilizaria o recurso de heat mapping para oferecer feedback de eficiência e medir o desempenho dos usuários dentro de um site da empresa. O objetivo seria fornecer insights valiosos sobre áreas de alto interesse e interação, bem como identificar possíveis problemas de usabilidade que poderiam estar impactando a produtividade dos usuários.",
-            imagens: Array.from({ length: 8 }, (_, i) => `/HeatWise/${i + 1}.png`)
+            imagens: Array.from({ length: 8 }, (_, i) => `./HeatWise/${i + 1}.png`)
         },
         {
             ambiente: "desktop",
-            capa: "/Hunzer/HunzerV.png",
+            capa: "./Hunzer/HunzerV.png",
             fundo: "bg-[rgb(147,215,3)] [box-shadow:inset_0_-30_60px_20px_rgb(100,199,43)]",
             delay: "delay-400",
             desc: "A Hunzer era uma plataforma voltada ao combate à fome e ao incentivo a práticas sustentáveis, permitindo que pessoas contribuíssem para um mundo melhor por meio de ações simples, doações e desafios gamificados. A proposta da plataforma era engajar usuários de forma acessível e motivadora, mostrando que pequenos gestos poderiam gerar grandes transformações. Ela permitia que qualquer pessoa fizesse parte desse movimento: usuários realizariam doações diretamente pelo site ou participariam de desafios que acumulariam pontos, os quais seriam trocados por recompensas e certificações simbólicas.",
-            imagens: Array.from({ length: 7 }, (_, i) => `/Hunzer/${i + 1}.png`)
+            imagens: Array.from({ length: 7 }, (_, i) => `./Hunzer/${i + 1}.png`)
         },
         {
             ambiente: "mobile",
-            capa: "/BlueHope/BlueHopeV.png",
+            capa: "./BlueHope/BlueHopeV.png",
             fundo: "bg-[rgb(27,87,245)] [box-shadow:inset_0_-30_60px_20px_rgb(0,42,228)]",
             delay: "delay-500",
             desc: "A Blue Hope era uma plataforma inovadora que tinha como objetivo limpar o meio ambiente dos oceanos por meio de desafios gamificados. Os usuários acumulariam pontos ao completar tarefas relacionadas à limpeza oceânica, que seriam exibidos em seus perfis e contribuiriam para um ranking global. A plataforma ofereceria uma linha de progresso com marcos, recompensando os usuários com certificados, medalhas e pequenos brindes digitais ao atingirem esses objetivos. Além de promover a ação ambiental, a Blue Hope conscientizaria o público sobre os problemas dos oceanos de forma ética e informativa.",
-            imagens: Array.from({ length: 8 }, (_, i) => `/BlueHope/${i + 1}.png`)
+            imagens: Array.from({ length: 8 }, (_, i) => `./BlueHope/${i + 1}.png`)
         },
         {
             ambiente: "mobile",
-            capa: "/GridHub/GridHubV.png",
+            capa: "./GridHub/GridHubV.png",
             fundo: "bg-[rgb(0,135,255)] [box-shadow:inset_0_-30_60px_20px_rgb(0,102,255)]",
             delay: "delay-600",
             desc: "descrição de GRIDHUB Lorem ipsum dolor sit...",
-            imagens: Array.from({ length: 11 }, (_, i) => `/GridHub/${i + 1}.png`)
+            imagens: Array.from({ length: 11 }, (_, i) => `./GridHub/${i + 1}.png`)
         },
         {
             ambiente: "desktop",
-            capa: "/BabyCare/BabyCareV.png",
+            capa: "./BabyCare/BabyCareV.png",
             fundo: "bg-[rgb(73,106,247)] [box-shadow:inset_0_-30_60px_20px_rgb(99,66,245)]",
             delay: "delay-700",
             desc: "BabyCare era uma plataforma dedicada a apoiar a jornada materna, oferecendo orientação, acolhimento e informações essenciais para mães, gestantes e profissionais de saúde. Seu propósito era tornar a experiência da maternidade mais segura, tranquila e conectada, reunindo conteúdos confiáveis sobre cuidados pré-natais, desenvolvimento do bebê, saúde materna, nutrição infantil e cuidados pós-parto. A plataforma proporcionava um ambiente intuitivo onde usuárias acompanhavam conteúdos educativos, acessavam orientações especializadas e encontravam suporte para cada fase da gestação e dos primeiros meses do bebê. ",
-            imagens: Array.from({ length: 11 }, (_, i) => `/BabyCare/${i + 1}.png`)
+            imagens: Array.from({ length: 11 }, (_, i) => `./BabyCare/${i + 1}.png`)
         },
         {
             ambiente: "desktop",
-            capa: "/Geeko/GeekoV.png",
+            capa: "./Geeko/GeekoV.png",
             fundo: "bg-[rgb(255,31,53)] [box-shadow:inset_0_-30_60px_20px_rgb(255,0,98)]",
             delay: "delay-800",
             desc: "descrição de GEEKO Lorem ipsum dolor sit...",
-            imagens: Array.from({ length: 5 }, (_, i) => `/Geeko/${i + 1}.png`)
+            imagens: Array.from({ length: 5 }, (_, i) => `./Geeko/${i + 1}.png`)
         }
     ];
 

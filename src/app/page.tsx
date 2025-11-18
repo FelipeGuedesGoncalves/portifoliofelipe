@@ -34,7 +34,7 @@ export default function Home() {
           </section>
         </nav>
         <div className=" lg:w-250 flex md:flex-row flex-col-reverse items-center justify-evenly md:mt-25 mt-12">
-          <Image className="flex-shrink-0 object-contain mr-10 lg:ml-10 md:ml-[0%] md:w-77 md:h-77 sm:w-60 sm:h-60 w-45 h-45 ml-[60%]" alt="" src={"/Felipe.png"} height={260} width={260}></Image>
+          <Image className="flex-shrink-0 object-contain mr-10 lg:ml-10 md:ml-[0%] md:w-77 md:h-77 sm:w-60 sm:h-60 w-45 h-45 ml-[60%]" alt="" src={"./Felipe.png"} height={260} width={260}></Image>
           <div className="md:h-40 flex flex-col justify-between w-full lg:mb-10 md:mb-20">
             <h1 className={`${S4.className} md:text-2xl xl:w-full w-full`}>Prazer, me chamo Felipe Guedes Gonçalves</h1>
             <p className="md:text-base text-sm lg:my-0 my-5">E sou um desenvolvedor web e mobile</p>
