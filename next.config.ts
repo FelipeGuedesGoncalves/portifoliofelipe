@@ -1,12 +1,13 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  output: "export",                     // para gerar site estático
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export",
   reactCompiler: true,
-  images: { unoptimized: true },        // se usar next/image
-  basePath: process.env.NODE_ENV === "production" ? "/SEU-REPO" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/SEU-REPO/" : "",
-  trailingSlash: true,                  // ajuda no GitHub Pages
+  images: { unoptimized: true },
+
+  basePath: process.env.NODE_ENV === "production" ? "/portifoliofelipe" : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/portifoliofelipe/" : "",
+
+  trailingSlash: true,
 };
 
 export default nextConfig;
