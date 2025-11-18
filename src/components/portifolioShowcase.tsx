@@ -119,7 +119,7 @@ export default function PortShow() {
             capa: "/HeatWise/HeatWiseV.png",
             fundo: "bg-[rgb(255,168,0)] [box-shadow:inset_0_-30_60px_20px_rgb(255,136,0)]",
             delay: "delay-300",
-            desc: "descrição de HEATWISE Lorem ipsum dolor sit...",
+            desc: "O HeatWise seria uma plataforma inovadora que utilizaria o recurso de heat mapping para oferecer feedback de eficiência e medir o desempenho dos usuários dentro de um site da empresa. O objetivo seria fornecer insights valiosos sobre áreas de alto interesse e interação, bem como identificar possíveis problemas de usabilidade que poderiam estar impactando a produtividade dos usuários.",
             imagens: Array.from({ length: 8 }, (_, i) => `/HeatWise/${i + 1}.png`)
         },
         {
@@ -127,7 +127,7 @@ export default function PortShow() {
             capa: "/Hunzer/HunzerV.png",
             fundo: "bg-[rgb(147,215,3)] [box-shadow:inset_0_-30_60px_20px_rgb(100,199,43)]",
             delay: "delay-400",
-            desc: "descrição de HUNZER Lorem ipsum dolor sit...",
+            desc: "A Hunzer era uma plataforma voltada ao combate à fome e ao incentivo a práticas sustentáveis, permitindo que pessoas contribuíssem para um mundo melhor por meio de ações simples, doações e desafios gamificados. A proposta da plataforma era engajar usuários de forma acessível e motivadora, mostrando que pequenos gestos poderiam gerar grandes transformações. Ela permitia que qualquer pessoa fizesse parte desse movimento: usuários realizariam doações diretamente pelo site ou participariam de desafios que acumulariam pontos, os quais seriam trocados por recompensas e certificações simbólicas.",
             imagens: Array.from({ length: 7 }, (_, i) => `/Hunzer/${i + 1}.png`)
         },
         {
@@ -135,7 +135,7 @@ export default function PortShow() {
             capa: "/BlueHope/BlueHopeV.png",
             fundo: "bg-[rgb(27,87,245)] [box-shadow:inset_0_-30_60px_20px_rgb(0,42,228)]",
             delay: "delay-500",
-            desc: "descrição de BLUEHOPE Lorem ipsum dolor sit...",
+            desc: "A Blue Hope era uma plataforma inovadora que tinha como objetivo limpar o meio ambiente dos oceanos por meio de desafios gamificados. Os usuários acumulariam pontos ao completar tarefas relacionadas à limpeza oceânica, que seriam exibidos em seus perfis e contribuiriam para um ranking global. A plataforma ofereceria uma linha de progresso com marcos, recompensando os usuários com certificados, medalhas e pequenos brindes digitais ao atingirem esses objetivos. Além de promover a ação ambiental, a Blue Hope conscientizaria o público sobre os problemas dos oceanos de forma ética e informativa.",
             imagens: Array.from({ length: 8 }, (_, i) => `/BlueHope/${i + 1}.png`)
         },
         {
@@ -151,7 +151,7 @@ export default function PortShow() {
             capa: "/BabyCare/BabyCareV.png",
             fundo: "bg-[rgb(73,106,247)] [box-shadow:inset_0_-30_60px_20px_rgb(99,66,245)]",
             delay: "delay-700",
-            desc: "descrição de BABYCARE Lorem ipsumLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum doloLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitLorem ipsum dolor sitr sitLorem ipsum dolor sitLorem ipsum dolor sit dolor sit...11111111111111 11111111 111111 1111 11111111 111111 22222222222 222222222222 222222222222222 222222222 22222222222 333333333 333333 333333333333 33333333 4444444444444 4444 444 44444 4444444 444444 555555555 5555 555 555 5555555555 55555555 666666 66666666666 666666 66666 6666666 ",
+            desc: "BabyCare era uma plataforma dedicada a apoiar a jornada materna, oferecendo orientação, acolhimento e informações essenciais para mães, gestantes e profissionais de saúde. Seu propósito era tornar a experiência da maternidade mais segura, tranquila e conectada, reunindo conteúdos confiáveis sobre cuidados pré-natais, desenvolvimento do bebê, saúde materna, nutrição infantil e cuidados pós-parto. A plataforma proporcionava um ambiente intuitivo onde usuárias acompanhavam conteúdos educativos, acessavam orientações especializadas e encontravam suporte para cada fase da gestação e dos primeiros meses do bebê. ",
             imagens: Array.from({ length: 11 }, (_, i) => `/BabyCare/${i + 1}.png`)
         },
         {
