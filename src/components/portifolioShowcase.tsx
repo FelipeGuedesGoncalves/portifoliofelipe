@@ -120,7 +120,7 @@ export default function PortShow() {
             fundo: "bg-[rgb(255,168,0)] [box-shadow:inset_0_-30_60px_20px_rgb(255,136,0)]",
             delay: "delay-300",
             desc: "descrição de HEATWISE Lorem ipsum dolor sit...",
-            imagens: Array.from({ length: 3 }, (_, i) => `/InsightWise/${i + 1}.png`)
+            imagens: Array.from({ length: 8 }, (_, i) => `/HeatWise/${i + 1}.png`)
         },
         {
             ambiente: "desktop",
@@ -136,7 +136,7 @@ export default function PortShow() {
             fundo: "bg-[rgb(27,87,245)] [box-shadow:inset_0_-30_60px_20px_rgb(0,42,228)]",
             delay: "delay-500",
             desc: "descrição de BLUEHOPE Lorem ipsum dolor sit...",
-            imagens: Array.from({ length: 3 }, (_, i) => `/InsightWise/${i + 1}.png`)
+            imagens: Array.from({ length: 8 }, (_, i) => `/BlueHope/${i + 1}.png`)
         },
         {
             ambiente: "mobile",
@@ -144,7 +144,7 @@ export default function PortShow() {
             fundo: "bg-[rgb(0,135,255)] [box-shadow:inset_0_-30_60px_20px_rgb(0,102,255)]",
             delay: "delay-600",
             desc: "descrição de GRIDHUB Lorem ipsum dolor sit...",
-            imagens: Array.from({ length: 3 }, (_, i) => `/InsightWise/${i + 1}.png`)
+            imagens: Array.from({ length: 11 }, (_, i) => `/GridHub/${i + 1}.png`)
         },
         {
             ambiente: "desktop",

@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center">
-      <div className="fixed z-50 2xl:bg-blue-500 xl:bg-green-500 lg:bg-yellow-500 md:bg-orange-500 sm:bg-red-500 w-80 h-5 m-5 rounded-4xl"></div>
+      
       <header className=" shadow-[inset_0px_-140px_180px_60px_rgb(224_224_224_/_0.15)] w-full bg-black flex flex-col items-center md:px-25 md:pb-30 pb-8 sm:px-17 px-10">
 
         <nav className={`xl:w-280 w-full h-20 flex justify-between items-center lg:text-lg md:text-md`}>
