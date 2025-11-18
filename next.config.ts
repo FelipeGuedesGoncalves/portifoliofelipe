@@ -4,9 +4,8 @@ const nextConfig = {
   reactCompiler: true,
   images: { unoptimized: true },
 
-  basePath: process.env.NODE_ENV === "production" ? "/portifoliofelipe" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/portifoliofelipe/" : "",
-
+  basePath: "/portifoliofelipe",
+  assetPrefix: "/portifoliofelipe",
   trailingSlash: true,
 };
 
